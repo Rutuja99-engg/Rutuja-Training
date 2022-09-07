@@ -1,1 +1,40 @@
+app:
+  code: cp-quickpay
+  name: cp-quickpay
+  version: '1.0'
+
+artifacts:
+   Chubb.DigitalPRS.cp-quickpay.zip: .
+
+    
+notification_users:
+   - 
+  
+#poll_interval: 0 minutes
+release: build
+
+build_tool: #build tool
+  name: Java_maven       # #need to chek
+  #version: '14.15.5'     #  #need to chek
+  command: 'build:sit' #  #need to chek
+
+include_branches: 
+  - dev_poc2
+  
+discover_strategy:
+  branches: 3
+  origin_pullrequests: 1
+  fork_pullrequests: 1
+  
+  
+schema_version: '1.0'
+
+# multibranch_script_id : Scalable-Jenkinsfile
+sandbox_enable : true
+
+build_extra_params:   
+   override_slave_label: '.NETCore2.2'
+
+   
+comment: 'dev run2'
 
